@@ -1,0 +1,54 @@
+<div class="title">Salesperson</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <form [formGroup]="form" novalidate (submit)="find()">
+        <div class="form-group">
+          <label for="language" class="required">
+            Language
+          </label>
+          <select class="form-control" id="language" formControlName="language">
+            <option [ngValue]="language.Any">
+              Any Language
+            </option>
+            <option [ngValue]="language.SpeakingGreek">
+              I Speak Greek
+            </option>
+            <option [ngValue]="language.NotSpeakingGreek">
+              I Don't Speak Greek
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="speciality">
+            Speciality
+          </label>
+          <select class="form-control" id="speciality" formControlName="speciality">
+            <option [ngValue]="null">
+              Any
+            </option>
+            <option *ngFor="let s of specialities" [ngValue]="s.groupId">
+              {{s.title}}
+            </option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-secondary" [disabled]="form.invalid || processing">
+          Find Salesperson
+        </button>
+      </form>
+    </div>
+    <div class="col-sm">
+      <img src="assets/images/salesperson.jpg" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div *ngIf="person" class="alert alert-primary" role="alert">
+        Great News. We could find a salesperson for you. <b>{{person}}</b>
+      </div>
+      <div *ngIf="person === null" class="alert alert-warning " role="alert">
+        Unfortunatly we could not find a salesperson for you. Try again later!
+      </div>
+    </div>
+  </div>
+</div>
