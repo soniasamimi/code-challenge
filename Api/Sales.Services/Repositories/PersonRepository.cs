@@ -27,7 +27,7 @@ namespace Sales.Services.Repositories
         }
 
         /// <summary>
-        /// This method tries to match a salesperson to the provided criteria
+        /// Tries to match a salesperson to the provided criteria
         /// </summary>
         /// <param name="criteria"></param>
         /// <param name="cancellationToken"></param>

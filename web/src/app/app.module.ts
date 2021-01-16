@@ -20,7 +20,7 @@ export function init(config: ConfigProvider): any {
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({ closeButton: true }),
     AppRoutingModule,
     CoreModule
   ],

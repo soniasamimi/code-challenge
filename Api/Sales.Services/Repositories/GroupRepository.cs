@@ -26,6 +26,12 @@ namespace Sales.Services.Repositories
             _logger = logger;
         }
 
+        /// <summary>
+        /// Returns a list of groups matching the provided type
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>A list of group items</returns>
         public async Task<List<GroupListItem>> ListAsync(GroupType type, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"Retrieving all groups of type {type}");

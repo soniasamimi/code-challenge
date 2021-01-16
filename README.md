@@ -1,16 +1,23 @@
 # Code Challenge
 
-## Front End
+## Front-End
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+The Front-End project which is located in `web/` directory was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7. Before you start make, sure the latest versions of Node.js and npm are installed on your machine.
+
+### Packages
+Run `npm i` to install all required packages for the project. 
+
+### Application Configuration
+The `assets/config.json` file constains all configuration required by the Front-End. The production deployment process should update this file with proper production values. This is the list of the available settings:
+
+- **apiUrl**: The base URL for the back end (Default value is `http://localhost:5000`)
+
+### Accessibility
+The Front-End project is [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) complianat and is designed to work with most screen readers.
 
 ### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-### Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ### Build
 
@@ -18,14 +25,19 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ### Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io). This will automatically generate code coverage for the tests. You can find the coverage report in the `/coverage` directory.
 
-### Running end-to-end tests
+### Lint
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng lint` to make sure your code uses the best Type Script coding practices.
 
-### Further help
+## Back-End
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The Back-End solution is located in `Api/` directory. It uses .NET Core 3.1 and runs on `http://localhost:5000` by default. You can use the Swagger page which opens automatically to test the Controllers and their Actions straight away without wunning the Front-End project. It uses the `Data.json` file as its read-only datasource.
 
-## Back End
+A quick summary of the used modules and implemented features:
+- .NET Core 3.1
+- EF Core (InMemory provider)
+- Swagger (UI is available on `http://localhost:5000/swagger`)
+- NLog (Log files are stored in `logs/` directory. See `nlog.config` file)
+- Unhandled Exception handling (`ExceptionHandler.cs`)
