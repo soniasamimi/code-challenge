@@ -7,6 +7,16 @@ h1 {
   padding-top: 10px;
 }
 
+h2 {
+  font-size: 1.4rem;
+}
+
+.banner {
+  padding: 2rem;
+  background-color: #e9ecef;
+  margin-bottom: 1.5rem;
+}
+
 .required {
   &:after {
     content: ' *';

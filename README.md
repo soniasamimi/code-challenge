@@ -33,11 +33,11 @@ Run `ng lint` to make sure your code uses the best Type Script coding practices.
 
 ## Back-End
 
-The Back-End solution is located in `Api/` directory. It uses .NET Core 3.1 and runs on `http://localhost:5000` by default. You can use the Swagger page which opens automatically to test the Controllers and their Actions straight away without wunning the Front-End project. It uses the `Data.json` file as its read-only datasource.
+The Back-End solution is located in `Api/` directory. It uses .NET Core 3.1 and runs on `http://localhost:5000` by default. You can use the Swagger UI page which opens automatically when the application is run to test the Controllers and their Actions straight away without running the Front-End project. It uses the `Data.json` file as its read-only datasource.
 
 A quick summary of the used modules and implemented features:
 - .NET Core 3.1
 - EF Core (InMemory provider)
 - Swagger (UI is available on `http://localhost:5000/swagger`)
-- NLog (Log files are stored in `logs/` directory. See `nlog.config` file)
+- NLog (Log files are stored in `logs/` directory. See `nlog.config` file for details)
 - Unhandled Exception handling (`ExceptionHandler.cs`)
