@@ -40,4 +40,10 @@ A quick summary of the used modules and implemented features:
 - EF Core (InMemory provider)
 - Swagger (UI is available on `http://localhost:5000/swagger`)
 - NLog (Log files are stored in `logs/` directory. See `nlog.config` file for details)
+- Xunit for testing
 - Unhandled Exception handling (`ExceptionHandler.cs`)
+
+
+Areas of improvement:
+- More tests can be added to increase the code coverage
+- More detailed CORS implementation
