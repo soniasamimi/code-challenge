@@ -1,8 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { SalesService } from './sales.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { FindSalespersonCriteria } from './sales.model';
 import { HttpClient } from '@angular/common/http';
+import { SalesService } from './sales.service';
+import { FindSalespersonCriteria } from './sales.model';
+import { Config, ConfigProvider } from '../core';
 
 describe('SalesService', () => {
   let service: SalesService;
@@ -14,7 +15,8 @@ describe('SalesService', () => {
         HttpClientTestingModule
       ],
       providers: [
-        SalesService
+        SalesService,
+        ConfigProvider
       ]
     }).compileComponents();
   });
@@ -22,6 +24,8 @@ describe('SalesService', () => {
   beforeEach(() => {
     service = TestBed.inject(SalesService);
     http = TestBed.inject(HttpClient);
+    const config = TestBed.inject(ConfigProvider);
+    config.value = { apiUrl: 'http://localhost:5000' } as Config;
   });
 
   it('should call getSpecialities end point', () => {

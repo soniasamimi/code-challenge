@@ -1,7 +1,9 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 import { of } from 'rxjs';
+import { ConfigProvider } from 'src/app/core';
 import { GroupItem, Result } from '../sales.model';
 import { SalesService } from '../sales.service';
 import { SalespersonComponent } from './salesperson.component';
@@ -13,13 +15,15 @@ describe('SalespersonComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ToastrModule.forRoot()
       ],
       declarations: [
         SalespersonComponent
       ],
       providers: [
-        SalesService
+        SalesService,
+        ConfigProvider
       ],
     }).compileComponents();
   });
@@ -54,7 +58,7 @@ describe('SalespersonComponent', () => {
 
     expect(component.form).toBeDefined();
     expect(component.form.value.language).toBeNull();
-    expect(component.form.value.speciality).toBe('-1');
+    expect(component.form.value.speciality).toBeNull();
   });
 
   it('Should successfully find a possible match for salesperson', () => {
